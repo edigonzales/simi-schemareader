@@ -14,7 +14,6 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 public class TableListingQuery {
-	
 	private static final int MAX_RESPONSE_COUNT = 15;
 	
 	private static final String QUERY_FILE = "classpath:sql/table_list.sql";
@@ -64,7 +63,7 @@ public class TableListingQuery {
 
 		String schemaHintSql = replaceWildcards(schemaHint);
 		String tableHintSql = replaceWildcards(tableHint);
-		
+
 		list = dbClient.query(
 						QUERY, 
 						new String[] {schemaHintSql, tableHintSql},

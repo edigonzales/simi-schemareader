@@ -9,10 +9,7 @@ att_base AS (
 		attname AS att_name,
 		attnotnull AS att_mandatory,
 		typname AS att_typ,
-		CASE 
-			WHEN typname = 'varchar' THEN atttypmod - 4
-			ELSE NULL
-		END AS att_length
+		NULLIF(information_schema._pg_char_max_length(atttypid, atttypmod), -1) AS att_length
 	FROM	
 		pg_namespace
 	JOIN 

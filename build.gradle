@@ -1,39 +1,40 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.3.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'org.springframework.experimental.aot' version '0.11.1'
 }
 
 group = 'ch.so.agi.simi.schemareader'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    maven { url 'https://repo.spring.io/release' }
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.apache.commons:commons-lang3'	
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-		
-	implementation 'org.postgresql:postgresql'
-	
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    implementation 'org.apache.commons:commons-lang3'	
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+        
+    implementation 'org.postgresql:postgresql'
+    
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 task testJar{
-	dependsOn 'testdb:initTestDb'
-	dependsOn build
-	
-	build.mustRunAfter 'testdb:initTestDb'
+    dependsOn 'testdb:initTestDb'
+    dependsOn build
+    
+    build.mustRunAfter 'testdb:initTestDb'
 }
 
 task copyJar(type: Copy, dependsOn: testJar){
@@ -42,81 +43,81 @@ task copyJar(type: Copy, dependsOn: testJar){
 }
 
 task buildImage(type:Exec, dependsOn: copyJar) {
-	def githash = getCheckedOutGitCommitHash()
-	def buildident = getVersion()
-	def build_timestamp = getTimestamp()
+    def githash = getCheckedOutGitCommitHash()
+    def buildident = getVersion()
+    def build_timestamp = getTimestamp()
 
- 	workingDir "$projectDir/docker/image"
- 	commandLine 'docker', 'build',
-				'--no-cache', '--force-rm',
-				'-t', "sogis/simi_schemareader:$buildident",
-				'--label', "simi_schemareader.created=$build_timestamp", 
-				'--label', "simi_schemareader.git_commit=$githash",
-				'--label', "simi_schemareader.version=$buildident",
-				'-f', 'Dockerfile',  '.'
+     workingDir "$projectDir/docker/image"
+     commandLine 'docker', 'build',
+                '--no-cache', '--force-rm',
+                '-t', "sogis/simi_schemareader:$buildident",
+                '--label', "simi_schemareader.created=$build_timestamp", 
+                '--label', "simi_schemareader.git_commit=$githash",
+                '--label', "simi_schemareader.version=$buildident",
+                '-f', 'Dockerfile',  '.'
 }
 
 
 task tagImage(type:Exec, dependsOn: buildImage) {
-	def buildident = getVersion()
-	
- 	commandLine 'docker', 'tag', 
-				"sogis/simi_schemareader:$buildident",
-				"sogis/simi_schemareader:latest"
+    def buildident = getVersion()
+    
+     commandLine 'docker', 'tag', 
+                "sogis/simi_schemareader:$buildident",
+                "sogis/simi_schemareader:latest"
 }
 
 task imgDown(type:Exec) {
   workingDir "$projectDir/docker"
- 	commandLine 'docker-compose', 'down'
- 	ignoreExitValue true
+     commandLine 'docker-compose', 'down'
+     ignoreExitValue true
 }
 
 task imgUp(type:Exec){
- 	workingDir "$projectDir/docker"
- 	commandLine 'docker-compose', 'up', '-d'
- 	
- 	dependsOn imgDown
- 	
- 	doLast { 	
-	  sleep(10000)
-	}
+     workingDir "$projectDir/docker"
+     commandLine 'docker-compose', 'up', '-d'
+     
+     dependsOn imgDown
+     
+     doLast { 	
+      sleep(10000)
+    }
 }
 
 // Asserts with one http get that the image is "sane"
 task imgTest{
 
-	dependsOn imgUp
-	dependsOn tagImage
-	
-	imgUp.mustRunAfter tagImage
-	
- 	doLast { 	
+    dependsOn imgUp
+    dependsOn tagImage
+    
+    imgUp.mustRunAfter tagImage
+    
+     doLast { 	
         def resp = new java.net.URL("http://localhost:8080/postgis?schema=public").text
         
         if(resp == null || !resp.contains("tableViewList"))
-        	throw new java.lang.RuntimeException("Can't execute get on docker image") 
+            throw new java.lang.RuntimeException("Can't execute get on docker image") 
     }
 }
 task pushImgLatest(type:Exec) {
-	commandLine 'docker', 'push', "sogis/simi_schemareader:latest"
+    commandLine 'docker', 'push', "sogis/simi_schemareader:latest"
 }
 
 task pushImg(type:Exec, dependsOn: pushImgLatest) {
-	def version = getVersion()
-	commandLine 'docker', 'push', "sogis/simi_schemareader:$version"
+    def version = getVersion()
+    commandLine 'docker', 'push', "sogis/simi_schemareader:$version"
 }
 
 String getVersion(){
-	return "1.0." + getBuildNumber()
+    return "1.0." + getBuildNumber()
 }
 
 String getBuildNumber() {
-	String val = System.getenv('GITHUB_RUN_NUMBER')
+    String val = System.getenv('GITHUB_RUN_NUMBER')
 
-	if(val == null)
-		val = 'localbuild'
+    if(val == null)
+        val = 'localbuild'
 
-	return val
+    return val
 }
 
 def getCheckedOutGitCommitHash() {
