@@ -147,3 +147,13 @@ Packages und deren Bedeutung
 * **ch.so.agi.schemareader.model.*:** Enthält als Model die Datentransfer-Objekte (DTO) der Services. Die DTO sind das Bindeglied zwischen Resultset und ausgegebener JSON-Response.
 * **ch.so.agi.schemareader.query: Enthält den Code zur Abfrage des Postgresql-Kataloges - sprich die Business-Logik des Service. 
 * **ch.so.agi.schemareader.util: Umfasst mehrfach verwendete statische Hilfsfunktionen.
+
+## Datenbezug
+
+### Testrequests 
+
+* http://localhost:8080/meta/oereb/afu_geologie_pub/SO_AFU_Geologie_20200831
+* http://localhost:8080/meta/oereb/alw_landwirtschaft_tierhaltung_pub/SO_ALW_Landwirtschaft_Tierhaltung_Publikation_20211019
+* http://localhost:8080/meta/oereb/alw_strukturverbesserungen_pub/SO_ALW_Strukturverbesserungen_Publikation_20190905
+* http://localhost:8080/meta/oereb/agi_av_gb_administrative_einteilungen_pub/SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822
+* java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2html.xsl -o:fubar.html

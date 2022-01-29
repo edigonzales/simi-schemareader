@@ -57,7 +57,7 @@ public class Controller {
     	return res;
     } 
     
-    @RequestMapping(value = "/meta/{db}/{schema}/{model}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE/*, MediaType.APPLICATION_XML_VALUE */})
+    @RequestMapping(value = "/meta/{db}/{schema}/{model}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 //    @RequestMapping("/meta/{db}/{schema}/{model}")
     public  List<TableAndFieldInfo> listMetaTables(
             @PathVariable String db,
@@ -81,10 +81,10 @@ public class Controller {
             log.info(tsi.getTvName());
             TableAndFieldInfo tci = MetaTableInfoQuery.queryTableInfo(dbClient, schema, tsi.getTvName(), model);
             tciList.add(tci);
-
         }
         
-
+        
+        
 
         
         
