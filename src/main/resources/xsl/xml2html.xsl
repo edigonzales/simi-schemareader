@@ -13,7 +13,7 @@
 
         <link type="text/css" rel="stylesheet" href="fonts.css" />
         <link type="text/css" rel="stylesheet" href="ilimodels.css" />
-        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <!-- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
 
 
         <style>
