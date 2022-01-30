@@ -1,8 +1,13 @@
 package ch.so.agi.simi.schemareader.util;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
@@ -33,5 +38,13 @@ public class Util {
         
         return fileText;
     }
+    
+    public static void loadFile(String resourcePath, File copyFile) throws IOException {
+        ResourceLoader resourceLoader = new DefaultResourceLoader();
+        Resource resource = resourceLoader.getResource(resourcePath);
 
+        InputStream resourceInputStream;
+        resourceInputStream = resource.getInputStream();
+        Files.copy(resourceInputStream, copyFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+    }
 }

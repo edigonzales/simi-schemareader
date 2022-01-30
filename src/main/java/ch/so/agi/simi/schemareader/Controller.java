@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 
 import ch.so.agi.simi.schemareader.dbclients.DbClientMap;
 import ch.so.agi.simi.schemareader.model.tableinfo.TableAndFieldInfo;
@@ -18,6 +23,10 @@ import ch.so.agi.simi.schemareader.query.MetaTableListingQuery;
 import ch.so.agi.simi.schemareader.query.TableInfoQuery;
 import ch.so.agi.simi.schemareader.query.TableListingQuery;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +39,9 @@ public class Controller {
 
 	@Autowired
 	DbClientMap dbClients;
+	
+	@Autowired
+	RendererService renderer;
 	
     @RequestMapping("/{db}/{schema}/{table}")
     public TableAndFieldInfo queryTableInfo(
@@ -57,9 +69,8 @@ public class Controller {
     	return res;
     } 
     
-    @RequestMapping(value = "/meta/{db}/{schema}/{model}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-//    @RequestMapping("/meta/{db}/{schema}/{model}")
-    public  List<TableAndFieldInfo> listMetaTables(
+    @RequestMapping(value = "/meta/{db}/{schema}/{model}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_HTML_VALUE})
+    public ResponseEntity<?> listMetaTables(
             @PathVariable String db,
             @PathVariable String schema,
             @PathVariable String model,
@@ -82,17 +93,29 @@ public class Controller {
             TableAndFieldInfo tci = MetaTableInfoQuery.queryTableInfo(dbClient, schema, tsi.getTvName(), model);
             tciList.add(tci);
         }
-        
-        
-        
-
-        
-        
-        // MetaTableInfoQuery: Parameter ist TableListing, dbClient und model(?)
-        
-        
-//        return "fubar";
-        return tciList;
+              
+        try {
+            if (!outputFormat.equalsIgnoreCase("xml")) {
+                File tmpFolder = Files.createTempDirectory("metaws-").toFile();
+                File xmlFile = Paths.get(tmpFolder.getAbsolutePath(), "datenbeschreibung.xml").toFile();
+                XmlMapper xmlMapper = new XmlMapper();
+                String xmlString = xmlMapper.writeValueAsString(tciList);
+                Files.write(Paths.get(xmlFile.getAbsolutePath()), "<?xml version=\"1.0\"?>".getBytes(), StandardOpenOption.CREATE);
+                Files.write(Paths.get(xmlFile.getAbsolutePath()), xmlString.getBytes(), StandardOpenOption.APPEND);
+                log.info(xmlFile.getAbsolutePath());
+                
+                if (outputFormat.equalsIgnoreCase("html")) {
+                    // TODO Die Datei ist vorhanden, kann man statischen Content irgendwie elegant ausliefern?
+                    File htmlFile = renderer.getResponseAsHtml(xmlFile, tmpFolder);
+                    String content = new String(Files.readAllBytes(Paths.get(htmlFile.getAbsolutePath())));
+                    return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(content);
+                }
+            }
+            
+            return ResponseEntity.ok().contentType(MediaType.APPLICATION_XML).body(tciList);            
+        } catch (Exception e) { // FIXME
+            throw new IllegalStateException(e);
+        }
         
     } 
     
