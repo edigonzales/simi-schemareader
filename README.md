@@ -156,4 +156,6 @@ Packages und deren Bedeutung
 * http://localhost:8080/meta/oereb/alw_landwirtschaft_tierhaltung_pub/SO_ALW_Landwirtschaft_Tierhaltung_Publikation_20211019
 * http://localhost:8080/meta/oereb/alw_strukturverbesserungen_pub/SO_ALW_Strukturverbesserungen_Publikation_20190905
 * http://localhost:8080/meta/oereb/agi_av_gb_administrative_einteilungen_pub/SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822
-* java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2html.xsl -o:fubar.html
+* java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2html.xsl -o:fubar.html  
+* java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2pdf.xsl -o:fubar.fo
+* /Users/stefan/apps/fop-2.7/fop/fop fubar.fo fubar.pdf
