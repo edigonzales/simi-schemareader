@@ -1,0 +1,26 @@
+<!-- NOTE: This is the version of the configuration -->
+<fop version="1.0">
+  <!-- Base URL for resolving relative URLs -->
+  <base>.</base>
+  <accessibility>true</accessibility>
+  <renderers>
+    <renderer mime="application/pdf">
+      <pdf-a-mode>PDF/A-1a</pdf-a-mode>
+      <version>1.4</version>
+      <fonts>
+        <font kerning="yes" embed-url="FrutigerLTCom-Roman.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="normal" weight="400"/>
+        </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-Italic.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="italic" weight="400"/>
+        </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-Black.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="normal" weight="700"/>
+        </font>
+        <font kerning="yes" embed-url="FrutigerLTCom-BlackItalic.ttf" encoding-mode="single-byte">
+          <font-triplet name="Frutiger" style="italic" weight="700"/>
+        </font>
+      </fonts>
+    </renderer>
+  </renderers>  
+</fop>

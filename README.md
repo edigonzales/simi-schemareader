@@ -159,3 +159,4 @@ Packages und deren Bedeutung
 * java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2html.xsl -o:fubar.html  
 * java -jar /Users/stefan/apps/SaxonHE10-6J/saxon-he-10.6.jar -s:SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822.xml -xsl:xml2pdf.xsl -o:fubar.fo
 * /Users/stefan/apps/fop-2.7/fop/fop fubar.fo fubar.pdf
+* /Users/stefan/apps/fop-2.7/fop/fop -c fop.xconf fubar.fo fubar.pdf
