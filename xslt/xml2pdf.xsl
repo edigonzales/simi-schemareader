@@ -6,12 +6,12 @@
         <fo:root language="de" font-family="Frutiger" font-size="10pt">
             <fo:layout-master-set>
                 <fo:simple-page-master master-name="firstPage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="12mm" margin-right="10mm">
-                    <fo:region-body margin-top="35mm" margin-bottom="15mm" background-color="#FFFFff"/>
+                    <fo:region-body margin-top="35mm" margin-bottom="10mm" background-color="#FFFFff"/>
                     <fo:region-before extent="30mm" background-color="#FFffFF"/>
                     <fo:region-after extent="10mm" background-color="#ffFFFF" display-align="after"/>
                 </fo:simple-page-master>
                 <fo:simple-page-master master-name="middlePage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="12mm" margin-right="10mm">
-                    <fo:region-body margin-top="15mm" margin-bottom="15mm" background-color="#FFFFFF"/>
+                    <fo:region-body margin-top="25mm" margin-bottom="10mm" background-color="#FFFFFF"/>
                     <fo:region-before extent="10mm" background-color="#FFFFFF"/>
                     <fo:region-after extent="10mm" background-color="#FFFFFF" display-align="after"/>
                 </fo:simple-page-master>
@@ -183,12 +183,76 @@
     </xsl:template>
     
     <xsl:template match="item">
-        <fo:block>
-        <xsl:value-of select="tableInfo/tvName"/>
-        </fo:block>
+        <fo:block-container margin-top="2mm">
+            <fo:block font-weight="700" font-style="italic">
+                <xsl:value-of select="tableInfo/tvName"/>
+            </fo:block>
+        </fo:block-container>
+        <fo:block-container margin-top="2mm">
+            <fo:block linefeed-treatment="preserve">
+                <xsl:value-of select="tableInfo/description"/>
+            </fo:block>
+        </fo:block-container>
         
+        <fo:table table-layout="fixed" width="100%" margin-top="1mm">
+            <fo:table-column column-width="40mm"/>
+            <fo:table-column column-width="100mm"/>
+            <fo:table-column column-width="28mm"/>
+            <fo:table-column column-width="20mm"/>
+            <fo:table-body>
+                <fo:table-row border-bottom="0.4pt solid black" font-size="6.5pt">
+                    <fo:table-cell padding-top="2mm">
+                        <fo:block>Name</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell padding-top="2mm">
+                        <fo:block>Beschreibung</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell padding-top="2mm">
+                        <fo:block>Datentyp</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell padding-top="2mm">
+                        <fo:block>Pflichtattribut</fo:block>
+                    </fo:table-cell>
+                </fo:table-row>
+
+                <xsl:apply-templates select="fields/fields" />
+
+            </fo:table-body>
+        </fo:table>
+
+        <fo:block-container margin-top="4mm">
+            <fo:block />
+        </fo:block-container>
 
     </xsl:template>
+
+    <xsl:template match="fields"> 
+        <xsl:variable name="bgclr">
+            <xsl:choose>
+                <xsl:when test="position() mod 2">#F8F8F8</xsl:when>
+                <xsl:otherwise>white</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+        <fo:table-row line-height="5mm" font-size="9pt" background-color="{$bgclr}">
+            <fo:table-cell>
+                <fo:block><xsl:value-of select="name"/></fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+                <!--<fo:block><xsl:value-of disable-output-escaping="yes" select="replace(description, '&#10;', '&lt;br/&gt;', 'i')"/></fo:block>-->
+                <fo:block linefeed-treatment="preserve"><xsl:value-of select="description"/></fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+                <fo:block><xsl:value-of select="type"/></fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+                <fo:block><xsl:value-of select="mandatory"/></fo:block>
+            </fo:table-cell>
+        </fo:table-row>
+
+    </xsl:template>
+
+
 
     <xsl:template match="header1">     
         <fo:block>      

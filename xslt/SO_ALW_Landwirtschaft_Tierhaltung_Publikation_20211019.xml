@@ -1,101 +1,1096 @@
-<List><item><tableInfo><schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName><description>Die Bewirtschaftungseinheiten des Agrarinformatinssystems GELAN zeigen, welche Bewirtschaftungseinheiten von welchem Betrieb aus bewirtschaftet werden. Die Summe aller Bewirtschaftungseinheiten eines Betriebes ergibt die Betriebsfläche. Die Bewirtschaftungseinheiten sind nutzungsunabhängig.
-Die Bewirtschaftungseinheit bildet zusammen mit der Bodenbedeckung im Agrardatensystem GELAN die Grundlage für die Erfassung der räumlich geführten Kulturen.
+<?xml version="1.0"?>
+<ArrayList>
+  <item>
+    <tableInfo>
+      <schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName>
+      <description>Die Bewirtschaftungseinheiten des Agrarinformatinssystems GELAN zeigen, welche Bewirtschaftungseinheiten von welchem Betrieb aus bewirtschaftet werden. Die Summe aller Bewirtschaftungseinheiten eines Betriebes ergibt die Betriebsfl&#xE4;che. Die Bewirtschaftungseinheiten sind nutzungsunabh&#xE4;ngig.
+Die Bewirtschaftungseinheit bildet zusammen mit der Bodenbedeckung im Agrardatensystem GELAN die Grundlage f&#xFC;r die Erfassung der r&#xE4;umlich gef&#xFC;hrten Kulturen.
 
-Die Ebene Bewirtschaftungseinheit umfasst sämtliche Bewirtschaftungseinheiten von Akteuren, welche als Bewirtschafter von Flächen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen für den Vollzug massgebend sind.
+Die Ebene Bewirtschaftungseinheit umfasst s&#xE4;mtliche Bewirtschaftungseinheiten von Akteuren, welche als Bewirtschafter von Fl&#xE4;chen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen f&#xFC;r den Vollzug massgebend sind.
 
-Datenschutzvorgaben: Alle mit der Durchführung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grundsätzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die für ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen für Landwirtschaft,  Veterinärwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundesämter für Landwirtschaft, Statistik und Umwelt, Bundesamt für Lebensmittelsicherheit und Veterinärwesen, Bundesamt für wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen können nach Prüfung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, für spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description><pkField>t_id</pkField><tvName>betrbsdttrktrdten_bewirtschaftungseinheit</tvName></tableInfo><fields><fields><name>t_id</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_basket</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_datasetname</name><mandatory>true</mandatory><type>varchar</type><length>200</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_type</name><mandatory>true</mandatory><type>varchar</type><length>60</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_ili_tid</name><mandatory>false</mandatory><type>uuid</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>geometrie</name><mandatory>true</mandatory><type>geometry</type><length/><description>Geometrie der Bewirtschaftungseinheit</description><geoFieldType>MULTIPOLYGON</geoFieldType><geoFieldSrOrg>EPSG</geoFieldSrOrg><geoFieldSrId>2056</geoFieldSrId></fields><fields><name>bezugsjahr</name><mandatory>false</mandatory><type>int4</type><length/><description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bewe_id</name><mandatory>true</mandatory><type>varchar</type><length>20</length><description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bewe_typ</name><mandatory>false</mandatory><type>varchar</type><length>50</length><description>Typ der Bewirtschaftungseinheiten (analog den Betriebstypen):
+Datenschutzvorgaben: Alle mit der Durchf&#xFC;hrung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grunds&#xE4;tzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die f&#xFC;r ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen f&#xFC;r Landwirtschaft,  Veterin&#xE4;rwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundes&#xE4;mter f&#xFC;r Landwirtschaft, Statistik und Umwelt, Bundesamt f&#xFC;r Lebensmittelsicherheit und Veterin&#xE4;rwesen, Bundesamt f&#xFC;r wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen k&#xF6;nnen nach Pr&#xFC;fung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, f&#xFC;r spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description>
+      <pkField>t_id</pkField>
+      <tvName>betrbsdttrktrdten_bewirtschaftungseinheit</tvName>
+    </tableInfo>
+    <fields>
+      <fields>
+        <name>t_id</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_basket</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_datasetname</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>200</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_type</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>60</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_ili_tid</name>
+        <mandatory>false</mandatory>
+        <type>uuid</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>geometrie</name>
+        <mandatory>true</mandatory>
+        <type>geometry</type>
+        <length/>
+        <description>Geometrie der Bewirtschaftungseinheit</description>
+        <geoFieldType>MULTIPOLYGON</geoFieldType>
+        <geoFieldSrOrg>EPSG</geoFieldSrOrg>
+        <geoFieldSrId>2056</geoFieldSrId>
+      </fields>
+      <fields>
+        <name>bezugsjahr</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bewe_id</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bewe_typ</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Typ der Bewirtschaftungseinheiten (analog den Betriebstypen):
 30101=Anerkannt nach LBV;
 30102=Betriebsgemeinschaft;
 30140=Gemeinschaftsweidebetriebe;
 30150=GS Betrieb;
 30105=LBV ohne DZ;
 30111=nicht kommerzielle Tierhaltung;
-30110=nicht LBV (übrige);
-30135=Sömmerungsbetrieb;
-30130=Tierschauen</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_bewe_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Code der administrativen Zonenzugehörigkeit der Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Mögliche Werte:
+30110=nicht LBV (&#xFC;brige);
+30135=S&#xF6;mmerungsbetrieb;
+30130=Tierschauen</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_bewe_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Code der administrativen Zonenzugeh&#xF6;rigkeit der Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_bewe_text</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>Zonenbezeichnung (administrative Zonenzugehörigkeit) der Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Mögliche Werte:
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_bewe_text</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>Zonenbezeichnung (administrative Zonenzugeh&#xF6;rigkeit) der Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>ohne_dz_bauzone</name><mandatory>false</mandatory><type>bool</type><length/><description>Ausschluss von Direktzahlungen für alte Bauzonen, wenn zusammenhängende Bewirtschaftung unter 25 Aren, und für alle neuen Bauzonen ab 2014.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>pflanzenbauliche_flaeche</name><mandatory>true</mandatory><type>numeric</type><length/><description>Pflanzenbaulich produktive Fläche der Bewirtschaftungseinheit in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bestockte_flaeche</name><mandatory>true</mandatory><type>numeric</type><length/><description>Mit Waldbestockung oder übriger Bestockung (aber ohne landwirtschaftliche Hecken) belegte Fläche der Bewirtschaftungseinheit in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>unproduktive_flaeche</name><mandatory>true</mandatory><type>numeric</type><length/><description>Unproduktive Fläche der Bewirtschaftungseinheit in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebsnummer_agis</name><mandatory>false</mandatory><type>varchar</type><length>25</length><description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Präfix aus Kantonskürzel und Buchstabe je nach Betreibstyp.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>pid_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>name_vorname</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kombination der Namenszeilen (Gesamtname für natürliche und übrige Personen)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>adresse</name><mandatory>false</mandatory><type>varchar</type><length>75</length><description>Strasse der Gebäudeadressierung inkl. Hausnummer</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>plz_ortschaft</name><mandatory>false</mandatory><type>varchar</type><length>80</length><description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Präfix</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_privat</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Privat</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_geschaeft</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Geschäft</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_mobil</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Mobil</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>mailadresse</name><mandatory>false</mandatory><type>varchar</type><length>50</length><description>Mailadresse</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gemeinde_wohnsitz</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Gemeindenamen der Wohnsitzgemeinde</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields></fields></item><item><tableInfo><schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName><description>Die Kulturen (Flächenobjekte) des Agrarinformatinssystems GELAN zeigen, welche Kulturflächen von welchem Betrieb aus bewirtschaftet werden. Die zu erfassenden Kulturpolygone müssen innerhalb der dem Bewirtschafter zugeteilten Bewirtschaftungseinheiten liegen und zeigen damit die detaillierte Nutzung der jeweiligen Bewirtschaftungseinheit.
-Die Kulturpolygone werden im Agrardatensystem GELAN mit der Bodenbedeckung verschnitten um die, für die effektive Bewirtschaftung massgebende Fläche zu ermitteln.
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>ohne_dz_bauzone</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Ausschluss von Direktzahlungen f&#xFC;r alte Bauzonen, wenn zusammenh&#xE4;ngende Bewirtschaftung unter 25 Aren, und f&#xFC;r alle neuen Bauzonen ab 2014.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>pflanzenbauliche_flaeche</name>
+        <mandatory>true</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Pflanzenbaulich produktive Fl&#xE4;che der Bewirtschaftungseinheit in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bestockte_flaeche</name>
+        <mandatory>true</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Mit Waldbestockung oder &#xFC;briger Bestockung (aber ohne landwirtschaftliche Hecken) belegte Fl&#xE4;che der Bewirtschaftungseinheit in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>unproduktive_flaeche</name>
+        <mandatory>true</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Unproduktive Fl&#xE4;che der Bewirtschaftungseinheit in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebsnummer_agis</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>25</length>
+        <description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Pr&#xE4;fix aus Kantonsk&#xFC;rzel und Buchstabe je nach Betreibstyp.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>pid_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>name_vorname</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kombination der Namenszeilen (Gesamtname f&#xFC;r nat&#xFC;rliche und &#xFC;brige Personen)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>adresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>75</length>
+        <description>Strasse der Geb&#xE4;udeadressierung inkl. Hausnummer</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>plz_ortschaft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>80</length>
+        <description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Pr&#xE4;fix</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_privat</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Privat</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_geschaeft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Gesch&#xE4;ft</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_mobil</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Mobil</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>mailadresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Mailadresse</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gemeinde_wohnsitz</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Gemeindenamen der Wohnsitzgemeinde</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+    </fields>
+  </item>
+  <item>
+    <tableInfo>
+      <schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName>
+      <description>Die Kulturen (Fl&#xE4;chenobjekte) des Agrarinformatinssystems GELAN zeigen, welche Kulturfl&#xE4;chen von welchem Betrieb aus bewirtschaftet werden. Die zu erfassenden Kulturpolygone m&#xFC;ssen innerhalb der dem Bewirtschafter zugeteilten Bewirtschaftungseinheiten liegen und zeigen damit die detaillierte Nutzung der jeweiligen Bewirtschaftungseinheit.
+Die Kulturpolygone werden im Agrardatensystem GELAN mit der Bodenbedeckung verschnitten um die, f&#xFC;r die effektive Bewirtschaftung massgebende Fl&#xE4;che zu ermitteln.
 
-Die Ebene Kulturen umfasst sämtliche Nutzungsflächen von Akteuren, welche als Bewirtschafter von Flächen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen für den Vollzug massgebend sind.
+Die Ebene Kulturen umfasst s&#xE4;mtliche Nutzungsfl&#xE4;chen von Akteuren, welche als Bewirtschafter von Fl&#xE4;chen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen f&#xFC;r den Vollzug massgebend sind.
 
-Datenschutzvorgaben: Alle mit der Durchführung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grundsätzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die für ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen für Landwirtschaft,  Veterinärwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundesämter für Landwirtschaft, Statistik und Umwelt, Bundesamt für Lebensmittelsicherheit und Veterinärwesen, Bundesamt für wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen können nach Prüfung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, für spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description><pkField>t_id</pkField><tvName>betrbsdttrktrdten_kultur_flaeche</tvName></tableInfo><fields><fields><name>t_id</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_basket</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_datasetname</name><mandatory>true</mandatory><type>varchar</type><length>200</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_type</name><mandatory>true</mandatory><type>varchar</type><length>60</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_ili_tid</name><mandatory>false</mandatory><type>uuid</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>geometrie</name><mandatory>true</mandatory><type>geometry</type><length/><description>Geometrie des Kulturpolygons</description><geoFieldType>MULTIPOLYGON</geoFieldType><geoFieldSrOrg>EPSG</geoFieldSrOrg><geoFieldSrId>2056</geoFieldSrId></fields><fields><name>bezugsjahr</name><mandatory>false</mandatory><type>int4</type><length/><description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kultur_id</name><mandatory>true</mandatory><type>int4</type><length/><description>GELAN-Identifikator des Kulturpolygons. Im Agrarinformatinssystem GELAN bezeichnet als GEOID.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kulturcode_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Code der Kultur im Agrarinformationssystem GELAN (gemäss Kulturenkatalog des entsprenden Jahres). Im Agrarinformationssystem wird immer die Hauptkultur des entsprechenden Jahres deklariert.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kulturart</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kulturbezeichnung im Agrarinformationssystem GELAN (gemäss Kulturenkatalog des entsprenden Jahres). Im Agrarinformationssystem wird immer die Hauptkultur des entsprechenden Jahres deklariert.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_kultur_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Code der administrativen Zonenzugehörigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Die Zone der Bewirtschaftungseinheit ist für die Kultur massgebend.
-Mögliche Werte:
+Datenschutzvorgaben: Alle mit der Durchf&#xFC;hrung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grunds&#xE4;tzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die f&#xFC;r ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen f&#xFC;r Landwirtschaft,  Veterin&#xE4;rwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundes&#xE4;mter f&#xFC;r Landwirtschaft, Statistik und Umwelt, Bundesamt f&#xFC;r Lebensmittelsicherheit und Veterin&#xE4;rwesen, Bundesamt f&#xFC;r wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen k&#xF6;nnen nach Pr&#xFC;fung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, f&#xFC;r spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description>
+      <pkField>t_id</pkField>
+      <tvName>betrbsdttrktrdten_kultur_flaeche</tvName>
+    </tableInfo>
+    <fields>
+      <fields>
+        <name>t_id</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_basket</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_datasetname</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>200</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_type</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>60</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_ili_tid</name>
+        <mandatory>false</mandatory>
+        <type>uuid</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>geometrie</name>
+        <mandatory>true</mandatory>
+        <type>geometry</type>
+        <length/>
+        <description>Geometrie des Kulturpolygons</description>
+        <geoFieldType>MULTIPOLYGON</geoFieldType>
+        <geoFieldSrOrg>EPSG</geoFieldSrOrg>
+        <geoFieldSrId>2056</geoFieldSrId>
+      </fields>
+      <fields>
+        <name>bezugsjahr</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kultur_id</name>
+        <mandatory>true</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>GELAN-Identifikator des Kulturpolygons. Im Agrarinformatinssystem GELAN bezeichnet als GEOID.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kulturcode_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Code der Kultur im Agrarinformationssystem GELAN (gem&#xE4;ss Kulturenkatalog des entsprenden Jahres). Im Agrarinformationssystem wird immer die Hauptkultur des entsprechenden Jahres deklariert.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kulturart</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kulturbezeichnung im Agrarinformationssystem GELAN (gem&#xE4;ss Kulturenkatalog des entsprenden Jahres). Im Agrarinformationssystem wird immer die Hauptkultur des entsprechenden Jahres deklariert.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_kultur_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Code der administrativen Zonenzugeh&#xF6;rigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+Die Zone der Bewirtschaftungseinheit ist f&#xFC;r die Kultur massgebend.
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_kultur_text</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>Beinhaltet die administrative Zonenzugehörigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Die Zone der Bewirtschaftungseinheit ist für die Kultur massgebend.
-Mögliche Werte:
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_kultur_text</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>Beinhaltet die administrative Zonenzugeh&#xF6;rigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+Die Zone der Bewirtschaftungseinheit ist f&#xFC;r die Kultur massgebend.
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>ohne_dz_bauzone</name><mandatory>false</mandatory><type>bool</type><length/><description>Marker für Ausschluss von Direktzahlungen für alte Bauzonen, wenn zusammenhängende Bewirtschaftung unter 25 Aren, und für alle neuen Bauzonen ab 2014.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bewe_id</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN, welche für die Kultur massgebend ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>flaeche_land_in_ln</name><mandatory>false</mandatory><type>numeric</type><length/><description>Kulturfläche in Aren; Wert gilt als Fläche anrechenbar als "innerhalb der Landwirtschaftlichen Nutzfläche".</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>flaeche_land_ausserhalb_ln</name><mandatory>false</mandatory><type>numeric</type><length/><description>Kulturfläche in Aren; Wert gilt als anrechenbar als "ausserhalb der Landwirtschaftlichen Nutzfläche"</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>baumzahl</name><mandatory>false</mandatory><type>int4</type><length/><description>Baumzahl des Kulturpolygons.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bff2_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebende Fläche mit BFF2-Qualität in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>naturschutzvertrag_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebende Fläche mit Vertrag bei der Naturschutzfachstelle (NHG-Vertrag) in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>vernetzung_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebende Fläche mit Vereinbarung im Vernetzungsprojekt in Aren.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>vernetzung_nutzungsvariante</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Für die Vernetzung gewählte Nutzungsvariante.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebsnummer_agis</name><mandatory>false</mandatory><type>varchar</type><length>25</length><description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Präfix aus Kantonskürzel und Buchstabe je nach Betreibstyp.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>pid_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>name_vorname</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kombination der Namenszeilen (Gesamtname für natürliche und übrige Personen)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>adresse</name><mandatory>false</mandatory><type>varchar</type><length>75</length><description>Strasse der Gebäudeadressierung inkl. Hausnummer</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>plz_ortschaft</name><mandatory>false</mandatory><type>varchar</type><length>80</length><description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Präfix</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_privat</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Privat</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_geschaeft</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Geschäft</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_mobil</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Mobil</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>mailadresse</name><mandatory>false</mandatory><type>varchar</type><length>50</length><description>Mailadresse</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gemeinde_wohnsitz</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Gemeindenamen der Wohnsitzgemeinde</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields></fields></item><item><tableInfo><schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName><description>Die Kulturen (Punktobjekte) des Agrarinformatinssystems GELAN zeigen, welche Punktobjekte (Bäume) von welchem Betrieb aus bewirtschaftet werden. Die zu erfassenden Objektpunkte (Bäume) müssen innerhalb der dem Bewirtschafter zugeteilten Bewirtschaftungseinheiten liegen und zeigen damit die detaillierte Nutzung der jeweiligen Bewirtschaftungseinheit.
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>ohne_dz_bauzone</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Marker f&#xFC;r Ausschluss von Direktzahlungen f&#xFC;r alte Bauzonen, wenn zusammenh&#xE4;ngende Bewirtschaftung unter 25 Aren, und f&#xFC;r alle neuen Bauzonen ab 2014.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bewe_id</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN, welche f&#xFC;r die Kultur massgebend ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>flaeche_land_in_ln</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Kulturfl&#xE4;che in Aren; Wert gilt als Fl&#xE4;che anrechenbar als "innerhalb der Landwirtschaftlichen Nutzfl&#xE4;che".</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>flaeche_land_ausserhalb_ln</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Kulturfl&#xE4;che in Aren; Wert gilt als anrechenbar als "ausserhalb der Landwirtschaftlichen Nutzfl&#xE4;che"</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>baumzahl</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Baumzahl des Kulturpolygons.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bff2_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebende Fl&#xE4;che mit BFF2-Qualit&#xE4;t in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>naturschutzvertrag_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebende Fl&#xE4;che mit Vertrag bei der Naturschutzfachstelle (NHG-Vertrag) in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>vernetzung_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebende Fl&#xE4;che mit Vereinbarung im Vernetzungsprojekt in Aren.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>vernetzung_nutzungsvariante</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>F&#xFC;r die Vernetzung gew&#xE4;hlte Nutzungsvariante.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebsnummer_agis</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>25</length>
+        <description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Pr&#xE4;fix aus Kantonsk&#xFC;rzel und Buchstabe je nach Betreibstyp.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>pid_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>name_vorname</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kombination der Namenszeilen (Gesamtname f&#xFC;r nat&#xFC;rliche und &#xFC;brige Personen)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>adresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>75</length>
+        <description>Strasse der Geb&#xE4;udeadressierung inkl. Hausnummer</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>plz_ortschaft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>80</length>
+        <description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Pr&#xE4;fix</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_privat</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Privat</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_geschaeft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Gesch&#xE4;ft</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_mobil</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Mobil</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>mailadresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Mailadresse</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gemeinde_wohnsitz</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Gemeindenamen der Wohnsitzgemeinde</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+    </fields>
+  </item>
+  <item>
+    <tableInfo>
+      <schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName>
+      <description>Die Kulturen (Punktobjekte) des Agrarinformatinssystems GELAN zeigen, welche Punktobjekte (B&#xE4;ume) von welchem Betrieb aus bewirtschaftet werden. Die zu erfassenden Objektpunkte (B&#xE4;ume) m&#xFC;ssen innerhalb der dem Bewirtschafter zugeteilten Bewirtschaftungseinheiten liegen und zeigen damit die detaillierte Nutzung der jeweiligen Bewirtschaftungseinheit.
 
-Die Ebene Kulturen umfasst sämtliche Nutzungsflächen von Akteuren, welche als Bewirtschafter von Flächen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen für den Vollzug massgebend sind.
+Die Ebene Kulturen umfasst s&#xE4;mtliche Nutzungsfl&#xE4;chen von Akteuren, welche als Bewirtschafter von Fl&#xE4;chen, als Tierhalter oder als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen f&#xFC;r den Vollzug massgebend sind.
 
-Datenschutzvorgaben: Alle mit der Durchführung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grundsätzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die für ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen für Landwirtschaft,  Veterinärwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundesämter für Landwirtschaft, Statistik und Umwelt, Bundesamt für Lebensmittelsicherheit und Veterinärwesen, Bundesamt für wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen können nach Prüfung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, für spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description><pkField>t_id</pkField><tvName>betrbsdttrktrdten_kultur_punktelement</tvName></tableInfo><fields><fields><name>t_id</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_basket</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_datasetname</name><mandatory>true</mandatory><type>varchar</type><length>200</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_type</name><mandatory>true</mandatory><type>varchar</type><length>60</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_ili_tid</name><mandatory>false</mandatory><type>uuid</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>geometrie</name><mandatory>true</mandatory><type>geometry</type><length/><description>Punktgeometrie oder Kooridnaten des Baumes bzw. des Kulturpunktes.</description><geoFieldType>POINT</geoFieldType><geoFieldSrOrg>EPSG</geoFieldSrOrg><geoFieldSrId>2056</geoFieldSrId></fields><fields><name>bezugsjahr</name><mandatory>false</mandatory><type>int4</type><length/><description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kultur_id</name><mandatory>true</mandatory><type>int4</type><length/><description>GELAN-Identifikator des Kultur-Punktgeometrie. Im Agrarinformatinssystem GELAN bezeichnet als GEOID.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kulturcode_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Code der Kultur im Agrarinformationssystem GELAN (gemäss Kulturenkatalog des entsprenden Jahres).</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kulturart</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kulturbezeichnung im Agrarinformationssystem GELAN (gemäss Kulturenkatalog des entsprenden Jahres).</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_kultur_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Code der administrativen Zonenzugehörigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Die Zone der Bewirtschaftungseinheit ist für die Kultur massgebend.
-Mögliche Werte:
+Datenschutzvorgaben: Alle mit der Durchf&#xFC;hrung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grunds&#xE4;tzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die f&#xFC;r ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen f&#xFC;r Landwirtschaft,  Veterin&#xE4;rwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundes&#xE4;mter f&#xFC;r Landwirtschaft, Statistik und Umwelt, Bundesamt f&#xFC;r Lebensmittelsicherheit und Veterin&#xE4;rwesen, Bundesamt f&#xFC;r wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen k&#xF6;nnen nach Pr&#xFC;fung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, f&#xFC;r spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description>
+      <pkField>t_id</pkField>
+      <tvName>betrbsdttrktrdten_kultur_punktelement</tvName>
+    </tableInfo>
+    <fields>
+      <fields>
+        <name>t_id</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_basket</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_datasetname</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>200</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_type</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>60</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_ili_tid</name>
+        <mandatory>false</mandatory>
+        <type>uuid</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>geometrie</name>
+        <mandatory>true</mandatory>
+        <type>geometry</type>
+        <length/>
+        <description>Punktgeometrie oder Kooridnaten des Baumes bzw. des Kulturpunktes.</description>
+        <geoFieldType>POINT</geoFieldType>
+        <geoFieldSrOrg>EPSG</geoFieldSrOrg>
+        <geoFieldSrId>2056</geoFieldSrId>
+      </fields>
+      <fields>
+        <name>bezugsjahr</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kultur_id</name>
+        <mandatory>true</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>GELAN-Identifikator des Kultur-Punktgeometrie. Im Agrarinformatinssystem GELAN bezeichnet als GEOID.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kulturcode_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Code der Kultur im Agrarinformationssystem GELAN (gem&#xE4;ss Kulturenkatalog des entsprenden Jahres).</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kulturart</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kulturbezeichnung im Agrarinformationssystem GELAN (gem&#xE4;ss Kulturenkatalog des entsprenden Jahres).</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_kultur_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Code der administrativen Zonenzugeh&#xF6;rigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+Die Zone der Bewirtschaftungseinheit ist f&#xFC;r die Kultur massgebend.
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>zone_kultur_text</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>Beinhaltet die administrative Zonenzugehörigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den grössten Flächenanteil hat).
-Die Zone der Bewirtschaftungseinheit ist für die Kultur massgebend.
-Mögliche Werte:
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>zone_kultur_text</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>Beinhaltet die administrative Zonenzugeh&#xF6;rigkeit der zugeordneten Bewirtschaftungseinheit (Zone, in welcher die Beirtschaftungseinheit den gr&#xF6;ssten Fl&#xE4;chenanteil hat).
+Die Zone der Bewirtschaftungseinheit ist f&#xFC;r die Kultur massgebend.
+M&#xF6;gliche Werte:
 - 31=Talzone
-- 41=Hügelzone
+- 41=H&#xFC;gelzone
 - 51=Bergzone 1
 - 52=Bergzone 2
 - 53=Bergzone 3
 - 54=Bergzone 4
-- 61=Sömmerungsgebiet,
-- 77=angestammten Flächen im Ausland
-- 79=nicht angestammten Flächen im Ausland
-- 99=Nicht zugeteilt</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>ohne_dz_bauzone</name><mandatory>false</mandatory><type>bool</type><length/><description>Marker für Ausschluss von Direktzahlungen für alte Bauzonen, wenn zusammenhängende Bewirtschaftung unter 25 Aren, und für alle neuen Bauzonen ab 2014.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bewe_id</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN, welche für die Kultur massgebend ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>flaeche_land_in_ln</name><mandatory>false</mandatory><type>numeric</type><length/><description>Kulturfläche in Aren; Wert anrechenbar als "innerhalb der Landwirtschaftlichen Nutzfläche". Bei Punktgeometrien ist dieser Wert immer Null.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>flaeche_land_ausserhalb_ln</name><mandatory>false</mandatory><type>numeric</type><length/><description>Kulturfläche in Aren; Wert anrechenbar als "ausserhalb der Landwirtschaftlichen Nutzfläche". Bei Punktgeometrien ist dieser Wert immer Null.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>baumzahl</name><mandatory>false</mandatory><type>int4</type><length/><description>Baumzahl; bei Punktgeometrie wird die Baumzahl jeweil mit 1 eingetragen.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bff2_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebender Wert für BFF2-Qualität. Bei Punktgeometrien wird die BFF2-Qualität entsprechend der Baumzahl mit 1 ausgegeben, wenn der Baum die Qualitäskriterien erfüllt.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>naturschutzvertrag_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebender Wert aus einem Vertrag mit der Naturschutzfachstelle (NHG-Vertrag).</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>vernetzung_flaeche</name><mandatory>false</mandatory><type>numeric</type><length/><description>Massgebender Wert bei einer Vereinbarung im Rahmen eines Vernetzungsprojektes.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>vernetzung_nutzungsvariante</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Für die Vernetzung gewählte Nutzungsvariante</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebsnummer_agis</name><mandatory>false</mandatory><type>varchar</type><length>25</length><description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Präfix aus Kantonskürzel und Buchstabe je nach Betreibstyp.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>pid_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>name_vorname</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kombination der Namenszeilen (Gesamtname für natürliche und übrige Personen)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>adresse</name><mandatory>false</mandatory><type>varchar</type><length>75</length><description>Strasse der Gebäudeadressierung inkl. Hausnummer</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_privat</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Privat</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_geschaeft</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Geschäft</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_mobil</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Mobil</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>mailadresse</name><mandatory>false</mandatory><type>varchar</type><length>50</length><description>Mailadresse</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gemeinde_wohnsitz</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Gemeindenamen der Wohnsitzgemeinde</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>plz_ortschaft</name><mandatory>false</mandatory><type>varchar</type><length>80</length><description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Präfix</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields></fields></item><item><tableInfo><schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName><description>Standortverwaltung des Agrarinformationssystems GELAN umfasst die Standorte eines Betriebes.
+- 61=S&#xF6;mmerungsgebiet,
+- 77=angestammten Fl&#xE4;chen im Ausland
+- 79=nicht angestammten Fl&#xE4;chen im Ausland
+- 99=Nicht zugeteilt</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>ohne_dz_bauzone</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Marker f&#xFC;r Ausschluss von Direktzahlungen f&#xFC;r alte Bauzonen, wenn zusammenh&#xE4;ngende Bewirtschaftung unter 25 Aren, und f&#xFC;r alle neuen Bauzonen ab 2014.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bewe_id</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>ID der Bewirtschaftungseinheit im Agrarinformationssystem GELAN, welche f&#xFC;r die Kultur massgebend ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>flaeche_land_in_ln</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Kulturfl&#xE4;che in Aren; Wert anrechenbar als "innerhalb der Landwirtschaftlichen Nutzfl&#xE4;che". Bei Punktgeometrien ist dieser Wert immer Null.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>flaeche_land_ausserhalb_ln</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Kulturfl&#xE4;che in Aren; Wert anrechenbar als "ausserhalb der Landwirtschaftlichen Nutzfl&#xE4;che". Bei Punktgeometrien ist dieser Wert immer Null.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>baumzahl</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Baumzahl; bei Punktgeometrie wird die Baumzahl jeweil mit 1 eingetragen.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bff2_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebender Wert f&#xFC;r BFF2-Qualit&#xE4;t. Bei Punktgeometrien wird die BFF2-Qualit&#xE4;t entsprechend der Baumzahl mit 1 ausgegeben, wenn der Baum die Qualit&#xE4;skriterien erf&#xFC;llt.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>naturschutzvertrag_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebender Wert aus einem Vertrag mit der Naturschutzfachstelle (NHG-Vertrag).</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>vernetzung_flaeche</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Massgebender Wert bei einer Vereinbarung im Rahmen eines Vernetzungsprojektes.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>vernetzung_nutzungsvariante</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>F&#xFC;r die Vernetzung gew&#xE4;hlte Nutzungsvariante</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebsnummer_agis</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>25</length>
+        <description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Pr&#xE4;fix aus Kantonsk&#xFC;rzel und Buchstabe je nach Betreibstyp.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>pid_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>name_vorname</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kombination der Namenszeilen (Gesamtname f&#xFC;r nat&#xFC;rliche und &#xFC;brige Personen)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>adresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>75</length>
+        <description>Strasse der Geb&#xE4;udeadressierung inkl. Hausnummer</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_privat</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Privat</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_geschaeft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Gesch&#xE4;ft</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_mobil</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Mobil</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>mailadresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Mailadresse</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gemeinde_wohnsitz</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Gemeindenamen der Wohnsitzgemeinde</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>plz_ortschaft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>80</length>
+        <description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Pr&#xE4;fix</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+    </fields>
+  </item>
+  <item>
+    <tableInfo>
+      <schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName>
+      <description>Standortverwaltung des Agrarinformationssystems GELAN umfasst die Standorte eines Betriebes.
 
-Die Standortverwaltung umfasst sämtliche Standorte von Akteuren, welche als Bewirtschafter von Flächen, als Tierhalter, als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen für den Vollzug massgebend sind.
+Die Standortverwaltung umfasst s&#xE4;mtliche Standorte von Akteuren, welche als Bewirtschafter von Fl&#xE4;chen, als Tierhalter, als Lebensmittelverarbeiter aufgrund von Bundes- oder Kantonsmassnahmen f&#xFC;r den Vollzug massgebend sind.
 
-Datenschutzvorgaben: Alle mit der Durchführung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grundsätzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die für ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen für Landwirtschaft,  Veterinärwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundesämter für Landwirtschaft, Statistik und Umwelt, Bundesamt für Lebensmittelsicherheit und Veterinärwesen, Bundesamt für wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen können nach Prüfung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, für spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description><pkField>t_id</pkField><tvName>betrbsdttrktrdten_tierstandort</tvName></tableInfo><fields><fields><name>t_id</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_basket</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_datasetname</name><mandatory>true</mandatory><type>varchar</type><length>200</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_type</name><mandatory>true</mandatory><type>varchar</type><length>60</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_ili_tid</name><mandatory>false</mandatory><type>uuid</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>geometrie</name><mandatory>true</mandatory><type>geometry</type><length/><description>Geometrie bzw Koordinaten des Standortes.</description><geoFieldType>POINT</geoFieldType><geoFieldSrOrg>EPSG</geoFieldSrOrg><geoFieldSrId>2056</geoFieldSrId></fields><fields><name>bezugsjahr</name><mandatory>false</mandatory><type>int4</type><length/><description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>standortnummer</name><mandatory>true</mandatory><type>int4</type><length/><description>Standortnummer im Agrarinformationssystem GELAN; numerischer Teil der Standort-ID im Bundessystem AGIS.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>standorttyp</name><mandatory>true</mandatory><type>varchar</type><length>50</length><description>Standorttyp im Agrarinformationssystem GELAN:
+Datenschutzvorgaben: Alle mit der Durchf&#xFC;hrung der Erhebung und Bearbeitung betrauten Personen sind verpflichtet, die im Erhebungsmaterial enthaltenen Angaben nach den Grunds&#xE4;tzen des Datenschutzgesetzes zu behandeln. Folgende Stellen benutzen die f&#xFC;r ihre Aufgaben notwendigen Daten aus dem Agrarinformationssystem des Kantons: Kantonale Verwaltungen f&#xFC;r Landwirtschaft,  Veterin&#xE4;rwesen, Wald, Jagd &amp; Fischerei, Raumplanung, Umwelt, Lebensmittelsicherheit und Statistik, Bundes&#xE4;mter f&#xFC;r Landwirtschaft, Statistik und Umwelt, Bundesamt f&#xFC;r Lebensmittelsicherheit und Veterin&#xE4;rwesen, Bundesamt f&#xFC;r wirtschaftliche Landesversorgung, Eidg. Zollverwaltung, TSM Treuhand GmbH (Verwaltung Milcheinlieferungen), Kantonale Laboratorien, Tierverkehrsdatenbank. Weitere Stellen k&#xF6;nnen nach Pr&#xFC;fung einer Datenbezugsvereinbarung Daten aus dem Agrarinformatinssystem, im Rahmen der Datenschutzgesetzgebung, f&#xFC;r spezifische Aufgaben verwenden (z.B. Hochschulen &amp; Forschungsanstalten).</description>
+      <pkField>t_id</pkField>
+      <tvName>betrbsdttrktrdten_tierstandort</tvName>
+    </tableInfo>
+    <fields>
+      <fields>
+        <name>t_id</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_basket</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_datasetname</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>200</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_type</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>60</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_ili_tid</name>
+        <mandatory>false</mandatory>
+        <type>uuid</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>geometrie</name>
+        <mandatory>true</mandatory>
+        <type>geometry</type>
+        <length/>
+        <description>Geometrie bzw Koordinaten des Standortes.</description>
+        <geoFieldType>POINT</geoFieldType>
+        <geoFieldSrOrg>EPSG</geoFieldSrOrg>
+        <geoFieldSrId>2056</geoFieldSrId>
+      </fields>
+      <fields>
+        <name>bezugsjahr</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>standortnummer</name>
+        <mandatory>true</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Standortnummer im Agrarinformationssystem GELAN; numerischer Teil der Standort-ID im Bundessystem AGIS.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>standorttyp</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Standorttyp im Agrarinformationssystem GELAN:
 Allgemein;
 Bienenstand;
 Fischzucht;
@@ -104,7 +1099,7 @@ Tierstandort ohne TVD;
 Tierstandort TVD;
 Tierstandort TVD leerstehend;
 
-Zur Information wird nachfolgend die Klassifizierung der Betriebstypen gemäss AGIS Bund aufgeführt:
+Zur Information wird nachfolgend die Klassifizierung der Betriebstypen gem&#xE4;ss AGIS Bund aufgef&#xFC;hrt:
 Anerkannt nach LBV;
 Betriebsgemeinschaft;
 Biogasanlage;
@@ -113,36 +1108,216 @@ GS Betrieb;
 Kompostieranlage;
 LBV ohne DZ;
 nicht kommerzielle Tierhaltung;
-nicht LBV (übrige);
-Sömmerungsbetrieb;
+nicht LBV (&#xFC;brige);
+S&#xF6;mmerungsbetrieb;
 Schlachthof;
 Tierschauen;
 Viehhandelsunternehmen;
 Wanderherde;
 
-AGIS Bund gibt für Betriebsform folgende mögliche Werte vor:
-Mögliche Werte:
+AGIS Bund gibt f&#xFC;r Betriebsform folgende m&#xF6;gliche Werte vor:
+M&#xF6;gliche Werte:
 - 01 = Betrieb (=Ganzjahresbetrieb)
-- 02 = Produktionsstätte
+- 02 = Produktionsst&#xE4;tte
 - 04 = Gemeinschaftsweidebetrieb
-- 05 = Sömmerungsbetrieb
+- 05 = S&#xF6;mmerungsbetrieb
 - 06 = Betriebsgemeinschaft
 - 09 = Viehhandelsunternehmen
 - 10 = Wanderherde
 - 11 = Tierklinik
 - 12 = Schlachtbetriebe
-- 13 = Viehmärkte, Viehauktionen, Viehausstellungen und ähnliche Veranstaltungen
+- 13 = Viehm&#xE4;rkte, Viehauktionen, Viehausstellungen und &#xE4;hnliche Veranstaltungen
 - 14 = Betriebszweiggemeinschaft
 - 15 = Nichtkommerzielle Tierhaltung
-- 16 = ÖLN-Gemeinschaft (*)
-- 17 = Vergärungs- und Kompostierungsanlage (*)
+- 16 = &#xD6;LN-Gemeinschaft (*)
+- 17 = Verg&#xE4;rungs- und Kompostierungsanlage (*)
 - 20 = Tierhaltung
 - 99 = Nicht zugeteilt (*)
-* Auf dieser Betriebsform kann keine TVD-Nummer vergeben werden</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>status_standort</name><mandatory>true</mandatory><type>varchar</type><length>10</length><description>Status des Standortes; kann aktiv oder passiv sein. Datenexport erfolgt nur für aktive Standorte.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>tvd_nummer</name><mandatory>false</mandatory><type>int4</type><length/><description>Standortnummer der Tierverkehrsdatenbank</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>tvd_aktiv</name><mandatory>false</mandatory><type>varchar</type><length>10</length><description>Beinhaltet den Status der TVD-Nummer.
-Mögliche Werte gemäss AGIS Bund:
+* Auf dieser Betriebsform kann keine TVD-Nummer vergeben werden</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>status_standort</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>10</length>
+        <description>Status des Standortes; kann aktiv oder passiv sein. Datenexport erfolgt nur f&#xFC;r aktive Standorte.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>tvd_nummer</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Standortnummer der Tierverkehrsdatenbank</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>tvd_aktiv</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>10</length>
+        <description>Beinhaltet den Status der TVD-Nummer.
+M&#xF6;gliche Werte gem&#xE4;ss AGIS Bund:
 - 0 = TVD-Nr ist inaktiv
-- 1 = TVD-Nr ist aktiv</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bienenstand_nummer</name><mandatory>false</mandatory><type>int4</type><length/><description>Kantonale Nummer für den Bienenstand (Standorttyp=Bienenstand)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bienenstandort_saisonal</name><mandatory>false</mandatory><type>bool</type><length/><description>Marker zur Unterscheidung von ganzjährigen und saisonalen Bienenstandorten</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>bur_registernummer_standort</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>BUR-Nummer wird durch das Bundesunternehmensregister vergeben. Bei Bewirtschafterwechsel bleibt die BUR-Nummer bestehen.
-Das Betriebs- und Unternehmensregister (BUR) umfasst alle Unternehmen und Betriebe des privaten und öffentlichen Rechts, die in der Schweiz domiziliert sind und eine wirtschaftliche Tätigkeit ausüben. Das BUR dient dem BFS als Adressregister für die statistischen Erhebungen bei Unternehmen und Arbeitsstätten. Auch andere Ämter der Bundesverwaltung und zahlreiche Kantone verwenden das BUR zu statistischen oder administrativen Zwecken.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_rindvieh</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Rindvieh ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_equiden</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Tieren der Pferdegattung (Pferde, Esel etc.) ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_schafe</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Schafen ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_ziegen</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Ziegen ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_schweine</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Schweinen ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_gefluegel</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Geflügel (Hausgeflügel) ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_wild</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Wild in Gehegen (Paarhufer) ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_neuweltkameliden</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Tierhaltung mit Neuweltkameliden (Lamas, Alpakas) ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_bienen</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform eine Bienenhaltung ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gattung_fische</name><mandatory>true</mandatory><type>bool</type><length/><description>Gibt an, ob die Betriebsform ein Aquakulturbetrieb ist.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>standortnummer_agis</name><mandatory>false</mandatory><type>varchar</type><length>25</length><description>Standortnummer im Bundessystem AGIS (z.B. SOS131447 ) Entspricht der kantonalen Standort-ID mit einem Präfix aus Kantonskürzel und Buchstabe je nach Betreibstyp.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebstyp</name><mandatory>true</mandatory><type>varchar</type><length>50</length><description>Betriebstyp gemäss Agrardatensystem GELAN:
+- 1 = TVD-Nr ist aktiv</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bienenstand_nummer</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Kantonale Nummer f&#xFC;r den Bienenstand (Standorttyp=Bienenstand)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bienenstandort_saisonal</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Marker zur Unterscheidung von ganzj&#xE4;hrigen und saisonalen Bienenstandorten</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>bur_registernummer_standort</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>BUR-Nummer wird durch das Bundesunternehmensregister vergeben. Bei Bewirtschafterwechsel bleibt die BUR-Nummer bestehen.
+Das Betriebs- und Unternehmensregister (BUR) umfasst alle Unternehmen und Betriebe des privaten und &#xF6;ffentlichen Rechts, die in der Schweiz domiziliert sind und eine wirtschaftliche T&#xE4;tigkeit aus&#xFC;ben. Das BUR dient dem BFS als Adressregister f&#xFC;r die statistischen Erhebungen bei Unternehmen und Arbeitsst&#xE4;tten. Auch andere &#xC4;mter der Bundesverwaltung und zahlreiche Kantone verwenden das BUR zu statistischen oder administrativen Zwecken.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_rindvieh</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Rindvieh ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_equiden</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Tieren der Pferdegattung (Pferde, Esel etc.) ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_schafe</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Schafen ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_ziegen</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Ziegen ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_schweine</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Schweinen ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_gefluegel</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Gefl&#xFC;gel (Hausgefl&#xFC;gel) ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_wild</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Wild in Gehegen (Paarhufer) ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_neuweltkameliden</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Tierhaltung mit Neuweltkameliden (Lamas, Alpakas) ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_bienen</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform eine Bienenhaltung ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gattung_fische</name>
+        <mandatory>true</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Gibt an, ob die Betriebsform ein Aquakulturbetrieb ist.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>standortnummer_agis</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>25</length>
+        <description>Standortnummer im Bundessystem AGIS (z.B. SOS131447 ) Entspricht der kantonalen Standort-ID mit einem Pr&#xE4;fix aus Kantonsk&#xFC;rzel und Buchstabe je nach Betreibstyp.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebstyp</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Betriebstyp gem&#xE4;ss Agrardatensystem GELAN:
 
 Anerkannt nach LBV, AGIS-Bund Code 01;
 Betriebsgemeinschaft, AGIS-Bund Code 06;
@@ -152,38 +1327,378 @@ GS Betrieb, AGIS-Bund Code 99;
 Kompostieranlage, AGIS-Bund Code 17;
 LBV ohne DZ, AGIS-Bund Code 01;
 nicht kommerzielle Tierhaltung, AGIS-Bund Code 15;
-nicht LBV (übrige), AGIS-Bund Code 01;
-Sömmerungsbetrieb, AGIS-Bund Code 05;
+nicht LBV (&#xFC;brige), AGIS-Bund Code 01;
+S&#xF6;mmerungsbetrieb, AGIS-Bund Code 05;
 Schlachthof, AGIS-Bund Code 12;
 Tierschauen, AGIS-Bund Code 13;
 Viehhandelsunternehmen, AGIS-Bund Code 09;
 Wanderherde, AGIS-Bund Code 10;
 
-Zur Information: AGIS Bund gibt für Betriebsform folgende mögliche Werte vor. Mögliche Werte:
+Zur Information: AGIS Bund gibt f&#xFC;r Betriebsform folgende m&#xF6;gliche Werte vor. M&#xF6;gliche Werte:
 - 01=Betrieb (=Ganzjahresbetrieb)
-- 02=Produktionsstätte
+- 02=Produktionsst&#xE4;tte
 - 04=Gemeinschaftsweidebetrieb
-- 05=Sömmerungsbetrieb
+- 05=S&#xF6;mmerungsbetrieb
 - 06=Betriebsgemeinschaft
 - 09=Viehhandelsunternehmen
 - 10=Wanderherde
 - 11=Tierklinik
 - 12=Schlachtbetriebe
-- 13=Viehmärkte, Viehauktionen, Viehausstellungen und ähnliche Veranstaltungen
+- 13=Viehm&#xE4;rkte, Viehauktionen, Viehausstellungen und &#xE4;hnliche Veranstaltungen
 - 14=Betriebszweiggemeinschaft
 - 15=Nichtkommerzielle Tierhaltung
-- 16=ÖLN-Gemeinschaft (*)
-- 17=Vergärungs- und Kompostierungsanlage (*)
+- 16=&#xD6;LN-Gemeinschaft (*)
+- 17=Verg&#xE4;rungs- und Kompostierungsanlage (*)
 - 20=Tierhaltung
 - 99=Nicht zugeteilt (*)
-* Auf dieser Betriebsform kann keine TVD-Nummer vergeben werden</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gemeinde_haupstandort</name><mandatory>true</mandatory><type>varchar</type><length>100</length><description>Gemeindenamen der Standortgemeinde des Hauptstandortes als Marker für das Betriebszentrum</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebsnummer_agis</name><mandatory>false</mandatory><type>varchar</type><length>25</length><description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Präfix aus Kantonskürzel und Buchstabe je nach Betreibstyp.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>betriebszweiggemeinschaft</name><mandatory>false</mandatory><type>bool</type><length/><description>Betrieb ist in einer Betriebszweiggemeinschaft mit einem anderen Betrieb verbunden</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>sak_betrieb</name><mandatory>false</mandatory><type>numeric</type><length/><description>Standardarbeitskraftbedarf berechnet anhand der Betriebsdaten gemäss den Faktoren in der Landwirtschaftlichen Begriffsverordnung LBV.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>programm_oeln</name><mandatory>false</mandatory><type>bool</type><length/><description>Anmeldung für die Betriebsmassnahme ÖLN (Ökologischer Leistungsnachweis)gemäss Direktzahlungsverordnung</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>programm_bio</name><mandatory>false</mandatory><type>bool</type><length/><description>Anmeldung für die Betriebsmassnahme BIO (Biologischer Landbau)gemäss Direktzahlungsverordnung</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>programm_biotyp</name><mandatory>false</mandatory><type>varchar</type><length>20</length><description>Unterscheidung bei Betrieben mit Biolandbau in folgende Typen:
+* Auf dieser Betriebsform kann keine TVD-Nummer vergeben werden</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gemeinde_haupstandort</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Gemeindenamen der Standortgemeinde des Hauptstandortes als Marker f&#xFC;r das Betriebszentrum</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebsnummer_agis</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>25</length>
+        <description>Betriebsnummer KTIDB im Bundessystem AGIS (z.B. SOB130452 ) Entspricht der kantonalen Betriebsnummer mit einem Pr&#xE4;fix aus Kantonsk&#xFC;rzel und Buchstabe je nach Betreibstyp.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>betriebszweiggemeinschaft</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Betrieb ist in einer Betriebszweiggemeinschaft mit einem anderen Betrieb verbunden</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>sak_betrieb</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Standardarbeitskraftbedarf berechnet anhand der Betriebsdaten gem&#xE4;ss den Faktoren in der Landwirtschaftlichen Begriffsverordnung LBV.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>programm_oeln</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Anmeldung f&#xFC;r die Betriebsmassnahme &#xD6;LN (&#xD6;kologischer Leistungsnachweis)gem&#xE4;ss Direktzahlungsverordnung</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>programm_bio</name>
+        <mandatory>false</mandatory>
+        <type>bool</type>
+        <length/>
+        <description>Anmeldung f&#xFC;r die Betriebsmassnahme BIO (Biologischer Landbau)gem&#xE4;ss Direktzahlungsverordnung</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>programm_biotyp</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>20</length>
+        <description>Unterscheidung bei Betrieben mit Biolandbau in folgende Typen:
 - Bio Gesamtbetrieb
 - Bio nur Dauerkulturen
-- Bio Umstellung</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_betrieb</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung LBV.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_rindvieh</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Rindvieh des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_equiden</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Pferdegattung des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_schafe</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Schafe des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_ziegen</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Ziegen des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_schweine</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Schweine des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_gefluegel</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) Geflügel des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_andere_raufutter</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) übrige Raufutterverzehrer (Alpakas, Lamas, Wild in Gehege) des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_gve_andere_tiere</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Grossvieheinheiten (GVE) andere Tiere (Kaninchen, etc.) des Betriebs berechnet nach den Faktoren gemäss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>total_ln_betrieb</name><mandatory>false</mandatory><type>numeric</type><length/><description>Totalsumme der Landwirtschaftlichen Nutzfläche des Betriebs in Aren berechnet nach den Vorgaben der Direktzahlungsverordnung.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>pid_gelan</name><mandatory>false</mandatory><type>int4</type><length/><description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>name_vorname</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Kombination der Namenszeilen (Gesamtname für natürliche und übrige Personen)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>adresse</name><mandatory>false</mandatory><type>varchar</type><length>75</length><description>Strasse der Gebäudeadressierung inkl. Hausnummer</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>plz_ortschaft</name><mandatory>false</mandatory><type>varchar</type><length>80</length><description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Präfix</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_privat</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Privat</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_geschaeft</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Geschäft</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>telefon_mobil</name><mandatory>false</mandatory><type>varchar</type><length>40</length><description>Telefon Mobil</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>mailadresse</name><mandatory>false</mandatory><type>varchar</type><length>50</length><description>Mailadresse</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>gemeinde_wohnsitz</name><mandatory>false</mandatory><type>varchar</type><length>100</length><description>Gemeindenamen der Wohnsitzgemeinde</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields></fields></item><item><tableInfo><schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName><description>Abgrenzung der Qualität BFF2 für Biodiversitätsförderflächen im Agrarinformationssystems GELAN. Naturschutzverträge welche ins Agrarinforamtionssystem GELAN importiert wurden, werden in diesem Thema mit entsprechender Typisierung abgebildet.
-Die Qualitätspolygone werden unabhängig von den Bewirtschaftungseinheiten und den Kulturpolygonen erfasst.</description><pkField>t_id</pkField><tvName>bff_qualitaet_bff_qualitaet</tvName></tableInfo><fields><fields><name>t_id</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_basket</name><mandatory>true</mandatory><type>int8</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_datasetname</name><mandatory>true</mandatory><type>varchar</type><length>200</length><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>t_ili_tid</name><mandatory>false</mandatory><type>uuid</type><length/><description/><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>geometrie</name><mandatory>true</mandatory><type>geometry</type><length/><description>Geometrie des BFF2- oder Natur-Polygons</description><geoFieldType>MULTIPOLYGON</geoFieldType><geoFieldSrOrg>EPSG</geoFieldSrOrg><geoFieldSrId>2056</geoFieldSrId></fields><fields><name>bezugsjahr</name><mandatory>false</mandatory><type>int4</type><length/><description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>qualitaetstyp_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Kodierung Qualitätstyp (typcd im System GELAN):
+- Bio Umstellung</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_betrieb</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung LBV.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_rindvieh</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Rindvieh des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_equiden</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Pferdegattung des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_schafe</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Schafe des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_ziegen</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Ziegen des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_schweine</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Schweine des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_gefluegel</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) Gefl&#xFC;gel des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_andere_raufutter</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) &#xFC;brige Raufutterverzehrer (Alpakas, Lamas, Wild in Gehege) des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_gve_andere_tiere</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Grossvieheinheiten (GVE) andere Tiere (Kaninchen, etc.) des Betriebs berechnet nach den Faktoren gem&#xE4;ss Art. 27 der Landwirtschaftlichen Begriffsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>total_ln_betrieb</name>
+        <mandatory>false</mandatory>
+        <type>numeric</type>
+        <length/>
+        <description>Totalsumme der Landwirtschaftlichen Nutzfl&#xE4;che des Betriebs in Aren berechnet nach den Vorgaben der Direktzahlungsverordnung.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>pid_gelan</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Personennummer in der Personenverwaltung des Agrarinformationssystems GELAN</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>name_vorname</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Kombination der Namenszeilen (Gesamtname f&#xFC;r nat&#xFC;rliche und &#xFC;brige Personen)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>adresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>75</length>
+        <description>Strasse der Geb&#xE4;udeadressierung inkl. Hausnummer</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>plz_ortschaft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>80</length>
+        <description>Postleitzahl und Ortschaft; bei Postleitzahlen und Ortschaft ausserhalb der Schweiz allenfalls mit Pr&#xE4;fix</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_privat</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Privat</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_geschaeft</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Gesch&#xE4;ft</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>telefon_mobil</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>40</length>
+        <description>Telefon Mobil</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>mailadresse</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>50</length>
+        <description>Mailadresse</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>gemeinde_wohnsitz</name>
+        <mandatory>false</mandatory>
+        <type>varchar</type>
+        <length>100</length>
+        <description>Gemeindenamen der Wohnsitzgemeinde</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+    </fields>
+  </item>
+  <item>
+    <tableInfo>
+      <schemaName>alw_landwirtschaft_tierhaltung_pub</schemaName>
+      <description>Abgrenzung der Qualit&#xE4;t BFF2 f&#xFC;r Biodiversit&#xE4;tsf&#xF6;rderfl&#xE4;chen im Agrarinformationssystems GELAN. Naturschutzvertr&#xE4;ge welche ins Agrarinforamtionssystem GELAN importiert wurden, werden in diesem Thema mit entsprechender Typisierung abgebildet.
+Die Qualit&#xE4;tspolygone werden unabh&#xE4;ngig von den Bewirtschaftungseinheiten und den Kulturpolygonen erfasst.</description>
+      <pkField>t_id</pkField>
+      <tvName>bff_qualitaet_bff_qualitaet</tvName>
+    </tableInfo>
+    <fields>
+      <fields>
+        <name>t_id</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_basket</name>
+        <mandatory>true</mandatory>
+        <type>int8</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_datasetname</name>
+        <mandatory>true</mandatory>
+        <type>varchar</type>
+        <length>200</length>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>t_ili_tid</name>
+        <mandatory>false</mandatory>
+        <type>uuid</type>
+        <length/>
+        <description/>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>geometrie</name>
+        <mandatory>true</mandatory>
+        <type>geometry</type>
+        <length/>
+        <description>Geometrie des BFF2- oder Natur-Polygons</description>
+        <geoFieldType>MULTIPOLYGON</geoFieldType>
+        <geoFieldSrOrg>EPSG</geoFieldSrOrg>
+        <geoFieldSrId>2056</geoFieldSrId>
+      </fields>
+      <fields>
+        <name>bezugsjahr</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Bezugsjahr der Daten (bei jahresbezogenem Datensatz)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>qualitaetstyp_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Kodierung Qualit&#xE4;tstyp (typcd im System GELAN):
 42000 = BFF2 DZV
-42005 = Natur NS-Verträge
-42010 = BFF2 Sömmerung
+42005 = Natur NS-Vertr&#xE4;ge
+42010 = BFF2 S&#xF6;mmerung
 
 Strukturierte Darstellung aller Code-Kombinationen (GELAN):
 
@@ -200,12 +1715,12 @@ typcd 42000 = BFF2 DZV
 --strukturcd 42049 = Q aus Natur Inv.
 -artcd 42065 = Hecken
 --strukturcd 42035 = Q normal
--artcd 42070 = Bäume
+-artcd 42070 = B&#xE4;ume
 --strukturcd 42035 = Q normal
 -artcd 42075 = Reben
 --strukturcd 42035 = Q normal
 
-typcd 42005 = Natur NS-Verträge
+typcd 42005 = Natur NS-Vertr&#xE4;ge
 -artcd 42050 = unbestimmt
 --strukturcd 42048 = BFF exklusive
 -artcd 42055 = Wiese
@@ -215,17 +1730,27 @@ typcd 42005 = Natur NS-Verträge
 -artcd 42065 = Hecken
 --strukturcd 42048 = BFF exklusive
 
-typcd 42010 = BFF2 Sömmerung
+typcd 42010 = BFF2 S&#xF6;mmerung
 -artcd 42050 = unbestimmt
 --strukturcd 42030 = keine Angabe
---strukturcd 42049 = Q aus Natur Inv.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>qualitaetsvariante_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Kodierung Qualitäts-Variante (strukturcd im System GELAN):
+--strukturcd 42049 = Q aus Natur Inv.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>qualitaetsvariante_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Kodierung Qualit&#xE4;ts-Variante (strukturcd im System GELAN):
 42030 = keine Angabe
 42031 = kein BFF-Ausschluss (bei TWW ohne Vertrag)
 42035 = Q normal
 42040 = Q Struktur
 42045 = Q Flora
 42046 = Q Struktur &amp; Flora
-42048 = BFF exklusive (Standard für Naturpolygone; BFF wird durch überlagerung mit BFF2-Polygon erwirkt)
+42048 = BFF exklusive (Standard f&#xFC;r Naturpolygone; BFF wird durch &#xFC;berlagerung mit BFF2-Polygon erwirkt)
 42049 = Q aus Natur Inv.
 
 Strukturierte Darstellung aller Code-Kombinationen(GELAN):
@@ -243,12 +1768,12 @@ typcd 42000 = BFF2 DZV
 --strukturcd 42049 = Q aus Natur Inv.
 -artcd 42065 = Hecken
 --strukturcd 42035 = Q normal
--artcd 42070 = Bäume
+-artcd 42070 = B&#xE4;ume
 --strukturcd 42035 = Q normal
 -artcd 42075 = Reben
 --strukturcd 42035 = Q normal
 
-typcd 42005 = Natur NS-Verträge
+typcd 42005 = Natur NS-Vertr&#xE4;ge
 -artcd 42050 = unbestimmt
 --strukturcd 42048 = BFF exklusive
 -artcd 42055 = Wiese
@@ -258,16 +1783,26 @@ typcd 42005 = Natur NS-Verträge
 -artcd 42065 = Hecken
 --strukturcd 42048 = BFF exklusive
 
-typcd 42010 = BFF2 Sömmerung
+typcd 42010 = BFF2 S&#xF6;mmerung
 -artcd 42050 = unbestimmt
 --strukturcd 42030 = keine Angabe
---strukturcd 42049 = Q aus Natur Inv.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>kulturtyp_code</name><mandatory>false</mandatory><type>int4</type><length/><description>Kodierung Kulturtyp (artcd im System GELAN):
+--strukturcd 42049 = Q aus Natur Inv.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>kulturtyp_code</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Kodierung Kulturtyp (artcd im System GELAN):
 42050 = unbestimmt
 42055 = Wiese
 42060 = Weide
 42061 = Weide (BE)
 42065 = Hecken
-42070 = Bäume
+42070 = B&#xE4;ume
 42075 = Reben
 
 Strukturierte Darstellung aller Code-Kombinationen (GELAN):
@@ -285,12 +1820,12 @@ typcd 42000 = BFF2 DZV
 --strukturcd 42049 = Q aus Natur Inv.
 -artcd 42065 = Hecken
 --strukturcd 42035 = Q normal
--artcd 42070 = Bäume
+-artcd 42070 = B&#xE4;ume
 --strukturcd 42035 = Q normal
 -artcd 42075 = Reben
 --strukturcd 42035 = Q normal
 
-typcd 42005 = Natur NS-Verträge
+typcd 42005 = Natur NS-Vertr&#xE4;ge
 -artcd 42050 = unbestimmt
 --strukturcd 42048 = BFF exklusive
 -artcd 42055 = Wiese
@@ -300,8 +1835,45 @@ typcd 42005 = Natur NS-Verträge
 -artcd 42065 = Hecken
 --strukturcd 42048 = BFF exklusive
 
-typcd 42010 = BFF2 Sömmerung
+typcd 42010 = BFF2 S&#xF6;mmerung
 -artcd 42050 = unbestimmt
 --strukturcd 42030 = keine Angabe
---strukturcd 42049 = Q aus Natur Inv.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>datum_erstattest</name><mandatory>false</mandatory><type>date</type><length/><description>Datum Erst-Attest; erstmalige Feststellung der BFF2-Qualität</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>anzahl_baeume</name><mandatory>false</mandatory><type>int4</type><length/><description>Massgebende Anzahl Bäume für BFF2-Qualität innerhalb des BFF2-Polygons.
-Hinweis: z.B. Wiesen- und Weidepolygone haben Baumzahl =0.</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields><fields><name>datum_kontrolle</name><mandatory>false</mandatory><type>date</type><length/><description>Datum letzte Kontrolle oder der letzten BFF2-Attesterneuerung (vdatum im System GELAN)</description><geoFieldType/><geoFieldSrOrg/><geoFieldSrId/></fields></fields></item></List>
+--strukturcd 42049 = Q aus Natur Inv.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>datum_erstattest</name>
+        <mandatory>false</mandatory>
+        <type>date</type>
+        <length/>
+        <description>Datum Erst-Attest; erstmalige Feststellung der BFF2-Qualit&#xE4;t</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>anzahl_baeume</name>
+        <mandatory>false</mandatory>
+        <type>int4</type>
+        <length/>
+        <description>Massgebende Anzahl B&#xE4;ume f&#xFC;r BFF2-Qualit&#xE4;t innerhalb des BFF2-Polygons.
+Hinweis: z.B. Wiesen- und Weidepolygone haben Baumzahl =0.</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+      <fields>
+        <name>datum_kontrolle</name>
+        <mandatory>false</mandatory>
+        <type>date</type>
+        <length/>
+        <description>Datum letzte Kontrolle oder der letzten BFF2-Attesterneuerung (vdatum im System GELAN)</description>
+        <geoFieldType/>
+        <geoFieldSrOrg/>
+        <geoFieldSrId/>
+      </fields>
+    </fields>
+  </item>
+</ArrayList>
