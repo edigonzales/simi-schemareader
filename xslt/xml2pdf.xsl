@@ -6,9 +6,9 @@
         <fo:root language="de" font-family="Frutiger" font-size="10pt">
             <fo:layout-master-set>
                 <fo:simple-page-master master-name="firstPage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="12mm" margin-right="10mm">
-                    <fo:region-body margin-top="35mm" margin-bottom="15mm" background-color="#FFFF00"/>
-                    <fo:region-before extent="30mm" background-color="#FF00FF"/>
-                    <fo:region-after extent="10mm" background-color="#00FFFF" display-align="after"/>
+                    <fo:region-body margin-top="35mm" margin-bottom="15mm" background-color="#FFFFff"/>
+                    <fo:region-before extent="30mm" background-color="#FFffFF"/>
+                    <fo:region-after extent="10mm" background-color="#ffFFFF" display-align="after"/>
                 </fo:simple-page-master>
                 <fo:simple-page-master master-name="middlePage" page-height="297mm" page-width="210mm" margin-top="10mm" margin-bottom="10mm" margin-left="12mm" margin-right="10mm">
                     <fo:region-body margin-top="15mm" margin-bottom="15mm" background-color="#FFFFFF"/>
@@ -42,7 +42,7 @@
                         </fo:block>
                     </fo:block-container>
 
-                    <fo:block-container margin="0mm" padding="0mm" space-before="0mm" absolute-position="absolute" top="6.7mm" left="0mm" background-color="#00FFFF">
+                    <fo:block-container margin="0mm" padding="0mm" space-before="0mm" absolute-position="absolute" top="6.7mm" left="0mm" background-color="#ffFFFF">
                         <fo:block font-weight="700" font-style="italic">
                             Amt für Geoinformation
                         </fo:block>
@@ -78,34 +78,115 @@
                 <fo:block font-size="18pt" font-weight="700">
                     Administrative Einteilungen der amtlichen Vermessung und des Grundbuchs
                 </fo:block>
-                <fo:block-container margin-top="8mm" background-color="wheat">
+                <fo:block-container margin-top="8mm" background-color="white">
                     <fo:block font-weight="700">
                         Beschreibung
                     </fo:block>
                 </fo:block-container>
-                <fo:block-container margin-top="2mm" background-color="orange">
+                <fo:block-container margin-top="2mm" background-color="white">
                     <fo:block>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </fo:block>
                 </fo:block-container>
 
-                <fo:block-container margin-top="8mm" background-color="wheat">
+                <fo:block-container margin-top="8mm" background-color="white">
                     <fo:block font-weight="700">
                         Datum der letzten Publikation
                     </fo:block>
                 </fo:block-container>
-                <fo:block-container margin-top="2mm" background-color="orange">
+                <fo:block-container margin-top="2mm" background-color="white">
                     <fo:block>
                         23. Oktober 2021
                     </fo:block>
                 </fo:block-container>
 
+                <fo:block-container margin-top="8mm" background-color="white">
+                    <fo:block font-weight="700">
+                        Datenmodell
+                    </fo:block>
+                </fo:block-container>
+                <fo:block-container margin-top="2mm" background-color="white">
+                    <fo:block>
+                        <fo:basic-link text-decoration="none" color="#c62828"><xsl:attribute name="external-destination">https://geo.so.ch/models/ilimodels.xml?q=SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822</xsl:attribute>
+                            SO_AGI_AV_GB_Administrative_Einteilungen_Publikation_20180822
+                        </fo:basic-link>
+                    </fo:block>
+                </fo:block-container>
 
+                <fo:block-container margin-top="8mm" background-color="white">
+                    <fo:block font-weight="700">
+                        Kontakt (fachlich)
+                    </fo:block>
+                </fo:block-container>
+                <fo:block-container margin-top="2mm" background-color="white">
+                    <fo:block>
+                        Amt für Raumplanung
+                    </fo:block>
+                    <fo:block>
+                        Werkhofstrasse 59
+                    </fo:block>
+                    <fo:block>
+                        4509 Solothurn
+                    </fo:block>
+                    <fo:block>
+                        Telefon 032 627 25 61
+                    </fo:block>
+                    <fo:block>
+                        <fo:basic-link text-decoration="none" color="#c62828">
+                            <xsl:attribute name="external-destination">mailto:arp@bd.so.ch</xsl:attribute>
+                            arp@bd.so.ch
+                        </fo:basic-link>
+                    </fo:block>
+                </fo:block-container>
 
-                <fo:block>fubar</fo:block>>
+                <fo:block-container margin-top="8mm" background-color="white">
+                    <fo:block font-weight="700">
+                        Kontakt (technisch)
+                    </fo:block>
+                </fo:block-container>
+                <fo:block-container margin-top="2mm" background-color="white">
+                    <fo:block>
+                        Amt für Geoinformation
+                    </fo:block>
+                    <fo:block>
+                        Rötistrasse 4
+                    </fo:block>
+                    <fo:block>
+                        4509 Solothurn
+                    </fo:block>
+                    <fo:block>
+                        Telefon 032 627 75 96
+                    </fo:block>
+                    <fo:block>
+                        <fo:basic-link text-decoration="none" color="#c62828">
+                            <xsl:attribute name="external-destination">mailto:agi@bd.so.ch</xsl:attribute>
+                            agi@bd.so.ch
+                        </fo:basic-link>
+                    </fo:block>
+                    <fo:block>
+                        <fo:basic-link text-decoration="none" color="#c62828"><xsl:attribute name="external-destination">https://agi.so.ch</xsl:attribute>
+                            agi.so.ch
+                        </fo:basic-link>
+                    </fo:block>
+                </fo:block-container>
+
+                <fo:block-container margin-top="8mm" background-color="white">
+                    <fo:block font-weight="700">
+                        Inhalt
+                    </fo:block>
+                </fo:block-container>
+                
                 <xsl:apply-templates/>
+
             </fo:flow>
         </fo:page-sequence>
+    </xsl:template>
+    
+    <xsl:template match="item">
+        <fo:block>
+        <xsl:value-of select="tableInfo/tvName"/>
+        </fo:block>
+        
 
     </xsl:template>
 
