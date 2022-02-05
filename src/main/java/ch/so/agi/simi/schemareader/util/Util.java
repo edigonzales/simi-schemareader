@@ -14,6 +14,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.util.FileSystemUtils;
 import org.springframework.web.server.ResponseStatusException;
 
 public class Util {
@@ -46,5 +47,16 @@ public class Util {
         InputStream resourceInputStream;
         resourceInputStream = resource.getInputStream();
         Files.copy(resourceInputStream, copyFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+    }
+    
+    public static void loadFileToFolder(String resourcePath, File folder) throws IOException {
+        ResourceLoader resourceLoader = new DefaultResourceLoader();
+        Resource resource = resourceLoader.getResource(resourcePath);
+
+        InputStream resourceInputStream;
+        resourceInputStream = resource.getInputStream();
+        Files.copy(resourceInputStream, folder.toPath());
+        
+        FileSystemUtils.copyRecursively(folder, folder);
     }
 }

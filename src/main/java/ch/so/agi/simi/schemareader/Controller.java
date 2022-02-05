@@ -1,6 +1,7 @@
 package ch.so.agi.simi.schemareader;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ import ch.so.agi.simi.schemareader.query.TableInfoQuery;
 import ch.so.agi.simi.schemareader.query.TableListingQuery;
 
 import java.io.File;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -109,6 +111,13 @@ public class Controller {
                     File htmlFile = renderer.getResponseAsHtml(xmlFile, tmpFolder);
                     String content = new String(Files.readAllBytes(Paths.get(htmlFile.getAbsolutePath())));
                     return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(content);
+                } else if (outputFormat.equalsIgnoreCase("pdf")) {
+                    File pdfFile = renderer.getResponseAsPdf(xmlFile, tmpFolder);
+                    InputStream is = new java.io.FileInputStream(pdfFile);
+                    return ResponseEntity
+                            .ok().header("content-disposition", "attachment; filename=" + pdfFile.getName())
+                            .contentLength(pdfFile.length())
+                            .contentType(MediaType.APPLICATION_PDF).body(new InputStreamResource(is));
                 }
             }
             
